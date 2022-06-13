@@ -1,16 +1,30 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app">
+    <h1>{{firstName}}</h1>
+    <h2>{{num + 2}}</h2>
+    <h3>{{num > 1 ? 'number: > 1' : 'Number: < 1'}}</h3>
+    <h3>{{obj}}</h3>
+    <a :[attrKey]="linkUrl">Link</a>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+/* import HelloWorld from './components/HelloWorld.vue'; */
 
 export default {
-  name: 'App',
-  components: {
+  name: 'app',
+  /*   components: {
     HelloWorld,
-  },
+  }, */
+  data: () => ({
+    firstName: 'Andrei',
+    num: 2,
+    obj: {
+      age: 30,
+    },
+    linkUrl: 'https://google.com',
+    attrKey: 'href',
+  }),
 };
 </script>
 
